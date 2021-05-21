@@ -11,13 +11,20 @@
     "cypress:cache:list": "cypress cache list",
     "list-videos": "ls -l cypress/videos",
     "check-videos": "ok-file 'cypress/videos/*.mp4'",
-    "set-status": "set-status"
+    "serve": "http-server ./dist -a localhost -p 4200",
+    "run-cypress": "concurrently \"npm run serve\" \"wait-on http://localhost:4200/some-site/index.html && cypress run --spec cypress/integration/spec.js \" --kill-others --success first",
+    "build": "ng build"
   },
   "keywords": [],
   "author": "Gleb Bahmutov <gleb@cypress.io>",
   "license": "ISC",
   "devDependencies": {
-    "ok-file": "1.5.2"
+    "concurrently": "5.2.0",
+    "cypress": "^7.3.0",
+    "http-server": "0.12.1",
+    "npm-run-all": "4.1.5",
+    "run-script-os": "1.0.7",
+    "wait-on": "5.0.0"
   },
   "repository": {
     "type": "git",

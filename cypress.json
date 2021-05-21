@@ -1,1 +1,7 @@
-{}
+{
+	"baseUrl": "http://localhost:4200/some-site/",
+	"retries": {
+		"runMode": 3
+	},
+	"pageLoadTimeout": 999999
+}
